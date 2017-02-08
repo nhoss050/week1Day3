@@ -15,5 +15,6 @@ function countLetters(userString)
     }
   }
 }
+countLetters(userInput);
 console.log(returnObject);
 
