@@ -34,7 +34,7 @@ var data = {
 
 function whofollowswho() {
 
-var following = {}
+  var following = {}
 
   for(eachUser in data) {
     //console.log(data[eachUser].name)
@@ -54,6 +54,39 @@ var following = {}
     }
     following[eachUser] = followTemp
   }
-console.log(following);
+  console.log(following);
 }
-whofollowswho();
+//whofollowswho();
+function whofollowsmost() {
+
+  var following = {}
+
+  maxFollower=0;
+  maxFollowerName="";
+  for(eachUser in data) {
+    //console.log(data[eachUser].name)
+    //var followTemp = {
+    //name: data[eachUser].name,
+    //follows: followsNames(data[eachUser].follows)
+     //};
+
+
+     if( followsnumber(data[eachUser].follows) > maxFollower ){
+        maxFollower= followsnumber(data[eachUser].follows)
+        maxFollowerName = data[eachUser].name;
+     }
+
+    function followsnumber(followArray) {
+      var numberfollows= 0;
+      for(eachcode of followArray) {
+       numberfollows ++;
+      }
+      return numberfollows;
+    }
+    //following[eachUser] = followTemp
+  }
+  console.log(maxFollower);
+  console.log(maxFollowerName);
+
+}
+whofollowsmost()
